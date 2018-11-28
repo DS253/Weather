@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol CityUpdateDelegate {
+    func updateCity(city: String)
+}
+
 class ChangeCityViewController: UIViewController {
 
     @IBOutlet weak var changeCityTextField: UITextField!
