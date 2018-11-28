@@ -26,10 +26,24 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, CityUp
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
     }
 
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[locations.count - 1]
+        locationManager.stopUpdatingLocation()
+        locationManager.delegate = nil
+        
+        let latitude = String(location.coordinate.latitude)
+        let longitude = String(location.coordinate.longitude)
+        
+        let params : [String : String] = ["lat" : latitude, "lon" : longitude, "appid" : APP_ID]
+        
+    }
     func updateCity(city: String) {
         let parameter : [String : String] = ["q" : city, "appid" : APP_ID]
     }
