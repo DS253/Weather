@@ -17,6 +17,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, CityUp
     let APP_ID = "43daae7d4063aedd48701a1934ccfc46"
     
     let locationManager = CLLocationManager()
+    let weatherModel = WeatherModel()
     
     @IBOutlet weak var weatherImage: UIImageView!
     @IBOutlet weak var cityLabel: UILabel!
