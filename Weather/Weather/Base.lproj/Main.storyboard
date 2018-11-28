@@ -42,10 +42,9 @@
                                 <rect key="frame" x="0.0" y="193" width="375" height="454"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21°" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maG-5h-rbc" userLabel="Temperature Label">
-                                        <rect key="frame" x="191" y="0.0" width="168" height="127"/>
+                                        <rect key="frame" x="207.5" y="0.0" width="151.5" height="127"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="127" id="Ins-Mj-K5j"/>
-                                            <constraint firstAttribute="width" constant="168" id="L49-vi-iqw"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="100"/>
                                         <color key="textColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -55,10 +54,9 @@
                                         <rect key="frame" x="16" y="129" width="343" height="229"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wG6-tD-t3m" userLabel="City Label">
-                                        <rect key="frame" x="16" y="360" width="269" height="94"/>
+                                        <rect key="frame" x="20" y="360" width="136.5" height="94"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="94" id="1ca-XF-AHY"/>
-                                            <constraint firstAttribute="width" constant="269" id="eNC-0n-vA3"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                         <color key="textColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -67,9 +65,11 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="HcY-fV-yDf" secondAttribute="trailing" constant="16" id="388-OD-Brj"/>
-                                    <constraint firstItem="wG6-tD-t3m" firstAttribute="leading" secondItem="Khu-dW-afT" secondAttribute="leading" constant="16" id="4cE-HK-KtF"/>
+                                    <constraint firstItem="wG6-tD-t3m" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Khu-dW-afT" secondAttribute="leading" symbolic="YES" id="4cE-HK-KtF"/>
                                     <constraint firstAttribute="height" constant="454" id="V0Q-pY-Fd5"/>
                                     <constraint firstItem="HcY-fV-yDf" firstAttribute="top" secondItem="maG-5h-rbc" secondAttribute="bottom" constant="2" id="Y6m-le-1sv"/>
+                                    <constraint firstItem="maG-5h-rbc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Khu-dW-afT" secondAttribute="leading" constant="20" symbolic="YES" id="eup-6o-oio"/>
+                                    <constraint firstAttribute="trailing" secondItem="wG6-tD-t3m" secondAttribute="trailing" constant="218.5" id="gEi-ZP-Q6h"/>
                                     <constraint firstAttribute="bottom" secondItem="wG6-tD-t3m" secondAttribute="bottom" id="jZH-74-gTb"/>
                                     <constraint firstAttribute="trailing" secondItem="maG-5h-rbc" secondAttribute="trailing" constant="16" id="pt7-6o-kUH"/>
                                     <constraint firstItem="maG-5h-rbc" firstAttribute="top" secondItem="Khu-dW-afT" secondAttribute="top" id="rNJ-cc-DYR"/>
