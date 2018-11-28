@@ -32,7 +32,8 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, CityUp
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
     }
-
+    
+    // Retrieve network weather data
     func getWeatherData(url: String, parameters : [String : String]) {
         Alamofire.request(url, method: .get, parameters: parameters).responseJSON {
             response in
@@ -40,9 +41,14 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, CityUp
                 let weatherJSON : JSON = JSON(response.result.value!)
                 self.updateWeatherData(json: weatherJSON)
             }
+            else {
+                print("Error \(String(describing: response.result.error))")
+                self.cityLabel.text = "Network Issues"
+            }
         }
     }
     
+    // Parse network weather data
     func updateWeatherData(json : JSON) {
         if let weatherData = json["main"]["temp"].double {
             weatherModel.temperature = Int(weatherData - 273.15)
@@ -63,6 +69,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, CityUp
         weatherImage.image = UIImage(named: weatherModel.weatherIconName)
     }
     
+    // MARK: - CLLoationManager Delegate Methods
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[locations.count - 1]
         if location.horizontalAccuracy > 0 {
@@ -77,8 +84,23 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, CityUp
         }
     }
     
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Failed to retrieve location data: \(error)")
+        cityLabel.text = "Location Unavailable"
+    }
+    
+    // Delegate method to update a city's weather data
     func updateCity(city: String) {
         let parameter : [String : String] = ["q" : city, "appid" : APP_ID]
         getWeatherData(url: WEATHER_URL, parameters: parameter)
+    }
+    
+    // Segue method sets CityVC delegate to this VC
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "updateCity" {
+            
+            let destinationVC = segue.destination as! ChangeCityViewController
+            destinationVC.delegate = self
+        }
     }
 }
