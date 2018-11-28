@@ -13,12 +13,21 @@ protocol CityUpdateDelegate {
 }
 
 class ChangeCityViewController: UIViewController {
-
+    
+    var delegate : CityUpdateDelegate?
+    
     @IBOutlet weak var changeCityTextField: UITextField!
     
     @IBAction func getWeatherPressed(_ sender: Any) {
+        
+        let cityName = changeCityTextField.text!
+        
+        delegate?.updateCity(city: cityName)
+        
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
 }
