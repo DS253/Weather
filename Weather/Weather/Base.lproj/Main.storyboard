@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p5t-YO-oHp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="p5t-YO-oHp">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -54,7 +53,7 @@
                                         <rect key="frame" x="16" y="129" width="343" height="229"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wG6-tD-t3m" userLabel="City Label">
-                                        <rect key="frame" x="20" y="360" width="136.5" height="94"/>
+                                        <rect key="frame" x="16" y="360" width="343" height="94"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="94" id="1ca-XF-AHY"/>
                                         </constraints>
@@ -65,11 +64,11 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="HcY-fV-yDf" secondAttribute="trailing" constant="16" id="388-OD-Brj"/>
-                                    <constraint firstItem="wG6-tD-t3m" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Khu-dW-afT" secondAttribute="leading" symbolic="YES" id="4cE-HK-KtF"/>
+                                    <constraint firstItem="wG6-tD-t3m" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Khu-dW-afT" secondAttribute="leading" constant="16" id="4cE-HK-KtF"/>
                                     <constraint firstAttribute="height" constant="454" id="V0Q-pY-Fd5"/>
                                     <constraint firstItem="HcY-fV-yDf" firstAttribute="top" secondItem="maG-5h-rbc" secondAttribute="bottom" constant="2" id="Y6m-le-1sv"/>
                                     <constraint firstItem="maG-5h-rbc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Khu-dW-afT" secondAttribute="leading" constant="20" symbolic="YES" id="eup-6o-oio"/>
-                                    <constraint firstAttribute="trailing" secondItem="wG6-tD-t3m" secondAttribute="trailing" constant="218.5" id="gEi-ZP-Q6h"/>
+                                    <constraint firstAttribute="trailing" secondItem="wG6-tD-t3m" secondAttribute="trailing" constant="16" id="gEi-ZP-Q6h"/>
                                     <constraint firstAttribute="bottom" secondItem="wG6-tD-t3m" secondAttribute="bottom" id="jZH-74-gTb"/>
                                     <constraint firstAttribute="trailing" secondItem="maG-5h-rbc" secondAttribute="trailing" constant="16" id="pt7-6o-kUH"/>
                                     <constraint firstItem="maG-5h-rbc" firstAttribute="top" secondItem="Khu-dW-afT" secondAttribute="top" id="rNJ-cc-DYR"/>
@@ -81,6 +80,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Khu-dW-afT" secondAttribute="trailing" id="0KY-66-IR9"/>
+                            <constraint firstItem="wG6-tD-t3m" firstAttribute="centerX" secondItem="Eey-Un-lA8" secondAttribute="centerX" id="6Eu-iP-dYd"/>
                             <constraint firstItem="Khu-dW-afT" firstAttribute="leading" secondItem="Eey-Un-lA8" secondAttribute="leading" id="9ya-nn-ckh"/>
                             <constraint firstItem="cIs-aY-ps0" firstAttribute="leading" secondItem="Eey-Un-lA8" secondAttribute="leading" id="Fcb-l4-fxj"/>
                             <constraint firstAttribute="bottom" secondItem="cIs-aY-ps0" secondAttribute="bottom" id="Ig0-bH-zDj"/>
@@ -90,7 +90,6 @@
                             <constraint firstItem="MAp-A5-DTD" firstAttribute="top" secondItem="ANM-Lz-0Gb" secondAttribute="bottom" id="ovR-Ee-BGq"/>
                             <constraint firstAttribute="trailing" secondItem="cIs-aY-ps0" secondAttribute="trailing" id="y55-TX-zxa"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="cOF-qL-Zju"/>
                     </view>
                     <connections>
                         <outlet property="cityLabel" destination="wG6-tD-t3m" id="qEm-F7-DuR"/>
@@ -100,7 +99,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cTp-qn-Xmt" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="420" y="58"/>
+            <point key="canvasLocation" x="420" y="57.121439280359823"/>
         </scene>
         <!--Change City View Controller-->
         <scene sceneID="wmd-Eb-241">
@@ -147,21 +146,20 @@
                                             <action selector="backButtonPressed:" destination="TAs-LA-0ne" eventType="touchUpInside" id="ASU-xh-atT"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter City Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J7c-kI-vvn" userLabel="City Name Text Field">
-                                        <rect key="frame" x="93" y="141" width="189" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter City Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9fG-bR-bJa" userLabel="Change City TextField">
+                                        <rect key="frame" x="96" y="136" width="183" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="ZtO-P6-NPO" firstAttribute="top" secondItem="J7c-kI-vvn" secondAttribute="bottom" constant="20" id="2Eb-sV-S00"/>
                                     <constraint firstItem="hkJ-hv-RlX" firstAttribute="leading" secondItem="XiP-Jw-BbD" secondAttribute="leading" constant="16" id="6Y9-Q3-d1E"/>
-                                    <constraint firstAttribute="centerX" secondItem="J7c-kI-vvn" secondAttribute="centerX" id="B4b-uC-5Pj"/>
+                                    <constraint firstItem="ZtO-P6-NPO" firstAttribute="top" secondItem="9fG-bR-bJa" secondAttribute="bottom" constant="25" id="8ev-pU-igo"/>
+                                    <constraint firstItem="9fG-bR-bJa" firstAttribute="leading" secondItem="XiP-Jw-BbD" secondAttribute="leading" constant="96" id="DpH-KU-XHY"/>
                                     <constraint firstItem="ZtO-P6-NPO" firstAttribute="leading" secondItem="XiP-Jw-BbD" secondAttribute="leading" constant="12" id="Iv6-K9-zJ3"/>
-                                    <constraint firstItem="J7c-kI-vvn" firstAttribute="leading" secondItem="XiP-Jw-BbD" secondAttribute="leading" constant="93" id="Mhw-o9-izi"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="9fG-bR-bJa" secondAttribute="trailing" constant="96" id="Qrq-MT-gqV"/>
                                     <constraint firstItem="hkJ-hv-RlX" firstAttribute="top" secondItem="XiP-Jw-BbD" secondAttribute="top" constant="28" id="auT-uG-SZU"/>
                                     <constraint firstAttribute="bottom" secondItem="ZtO-P6-NPO" secondAttribute="bottom" id="cUG-Sq-Iol"/>
-                                    <constraint firstAttribute="trailing" secondItem="J7c-kI-vvn" secondAttribute="trailing" constant="93" id="hai-Id-lMi"/>
                                     <constraint firstAttribute="height" constant="221" id="jm5-dB-pP8"/>
                                     <constraint firstAttribute="trailing" secondItem="ZtO-P6-NPO" secondAttribute="trailing" constant="12" id="yKx-7N-XKJ"/>
                                 </constraints>
@@ -177,16 +175,15 @@
                             <constraint firstItem="XiP-Jw-BbD" firstAttribute="top" secondItem="deK-Ob-GRY" secondAttribute="top" id="gqf-Pf-vrw"/>
                             <constraint firstItem="qW3-oz-7o4" firstAttribute="top" secondItem="deK-Ob-GRY" secondAttribute="top" id="jfC-yn-FwQ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="3Fe-zZ-c7B"/>
                     </view>
                     <navigationItem key="navigationItem" id="hoR-K8-z05"/>
                     <connections>
-                        <outlet property="changeCityTextField" destination="J7c-kI-vvn" id="R58-fe-uqN"/>
+                        <outlet property="changeCityTextField" destination="9fG-bR-bJa" id="0RC-4k-ljI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LbF-K5-dDt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1260" y="58"/>
+            <point key="canvasLocation" x="1260" y="57.121439280359823"/>
         </scene>
     </scenes>
     <resources>
